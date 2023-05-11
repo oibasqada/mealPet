@@ -52,7 +52,7 @@ const CustomSwiper = () => {
                             <div>
                                 {
                                     meal.slice(0,3).map((meals, idx) =>
-                                        <Link key={idx} to={`/`}>
+                                        <Link key={idx + 1} to={`/`}>
                                             <SwiperSlide >
                                                 <img src={meals.strMealThumb} alt=""/>
                                             </SwiperSlide>
