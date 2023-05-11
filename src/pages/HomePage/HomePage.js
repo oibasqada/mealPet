@@ -28,10 +28,10 @@ const arrayList = useMemo(() => {
                         <div key={idx} className={'col-4'}>
                             <div className="box">
                                 <img src={isChosen === 'meals' ? meal.strMealThumb : `https://themealdb.com/images/ingredients/${meal.strIngredient}.png`} alt="2"/>
-                                {/*<div className="home-description">*/}
+                                <div className="home-description">
                                 <h3>{isChosen === 'meals' ? meal.strMeal : meal.strIngredient}</h3>
-                                {/*    <p>{isChosen === 'meals' ? meals.strCategory : meal}</p>*/}
-                                {/*</div>*/}
+                                    <p>{isChosen === 'meals' ? meals.strCategory : ''}</p>
+                                </div>
                             </div>
                         </div>
                     ))

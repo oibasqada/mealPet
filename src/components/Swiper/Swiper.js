@@ -1,18 +1,16 @@
 import React, {useEffect, useRef, useState} from "react";
+import axios from "axios";
+import {Link} from "react-router-dom";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Autoplay, Pagination, Navigation } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import "./swiper.scss";
 
-// import required modules
-import { Autoplay, Pagination, Navigation } from "swiper";
-import axios from "axios";
-import {Link} from "react-router-dom";
+
 
 const CustomSwiper = () => {
 
@@ -36,11 +34,11 @@ const CustomSwiper = () => {
                     spaceBetween={30}
                     centeredSlides={true}
                     autoplay={{
-                        delay: 2500,
+                        delay: 30500,
                         disableOnInteraction: false,
                     }}
                     pagination={{
-                        clickable: true,
+                        clickable: false,
                     }}
                     navigation={true}
                     modules={[Autoplay, Pagination, Navigation]}
@@ -53,8 +51,9 @@ const CustomSwiper = () => {
                                 {
                                     meal.slice(0,3).map((meals, idx) =>
                                         <Link key={idx + 1} to={`/`}>
-                                            <SwiperSlide >
+                                            <SwiperSlide>
                                                 <img src={meals.strMealThumb} alt=""/>
+                                                <h3>{meals.strMeal}</h3>
                                             </SwiperSlide>
                                         </Link>
                                     )
