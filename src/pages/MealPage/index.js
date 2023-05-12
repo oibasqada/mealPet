@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-// import {getOneMeal} from "../../redux/action/mealAction";
 import './index.css'
 import axios from "axios";
 import {Link, useParams} from "react-router-dom";
@@ -9,11 +7,7 @@ const MealPage = () => {
     const [showMore, setShowMore] = useState(false)
     const params = useParams()
     const [meal, setMeal] = useState([])
-    // const dispatch = useDispatch()
-    // const meal = useSelector(state => state.oneMeal.meals)
-    // useEffect(() => {
-    //     dispatch(getOneMeal())
-    // }, [dispatch])
+
     useEffect(() => {
         axios(`https://themealdb.com/api/json/v1/1/lookup.php?i=${params.strMeal}`)
             .then(({data}) => {

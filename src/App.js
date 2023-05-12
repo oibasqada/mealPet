@@ -3,13 +3,13 @@ import HomePage from "./pages/HomePage/HomePage";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import React, {useEffect} from "react";
-import {getMeals} from "./redux/action/mealAction";
-import MealPage from "./pages/MealPage";
+import MealPage from "./pages/MealPage/index";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import Header from "./components/Header/Header";
 import SearchByFirstLetter from "./pages/SearchPage/SearchByFirstLetter";
 import IngredientPage from "./pages/IngredientPage/IngredientPage";
 import {getIngredients, getLatestMeals, getMeals} from "./redux/action/mealAction";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 
@@ -33,6 +33,7 @@ function App() {
              <Route path={'/firstLetter/:letter'} element={<SearchByFirstLetter/>}/>
              <Route path={'/ingredient/:name'} element={<IngredientPage/>}/>
          </Routes>
+         <Footer/>
      </BrowserRouter>
     </div>
   );

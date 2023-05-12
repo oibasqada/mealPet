@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useParams} from "react-router-dom";
 import axios from "axios";
+import '../../App.css'
 
 const SearchPage = () => {
     const [meals, setMeals] = useState({})
@@ -28,9 +29,12 @@ const SearchPage = () => {
                                 meals.map((meal, idx) =>
                                 <div key={idx} className={'col-4'}>
                                     <div className="box">
-                                        <img src={meal.strMealThumb} alt=""/>
                                         <Link to={`/meals/${meal.idMeal}`}>
-                                            <h3>{meal.strMeal}</h3>
+                                            <img src={meal.strMealThumb} alt=""/>
+                                            <div className="home-description">
+                                                <h3>{meal.strMeal}</h3>
+                                                <p>{meal.strCategory}</p>
+                                            </div>
                                         </Link>
                                     </div>
                                 </div>

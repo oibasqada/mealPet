@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import CustomSwiper from "../../components/Swiper/Swiper";
 import {useSelector} from "react-redux";
 import Header from "../../components/Header/Header";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 const HomePage = () => {
     const meals = useSelector(state => state.meals)
@@ -34,11 +34,13 @@ const arrayList = useMemo(() => {
                             arrayList?.map((res, idx) => (
                                 <div key={idx} className={'col-4'}>
                                     <div className="box">
-                                        <img src={isChosen === 'meals' ? res.strMealThumb : `https://themealdb.com/images/ingredients/${res.strIngredient}.png`} alt="2"/>
-                                        <div className="home-description">
-                                            <h3>{isChosen === 'meals' ? res.strMeal : res.strIngredient}</h3>
-                                            <p>{isChosen === 'meals' ? res.strCategory : ''}</p>
-                                        </div>
+                                        <Link to={`/meals/${res.idMeal}`}>
+                                            <img src={isChosen === 'meals' ? res.strMealThumb : `https://themealdb.com/images/ingredients/${res.strIngredient}.png`} alt="2"/>
+                                            <div className="home-description">
+                                                <h3>{isChosen === 'meals' ? res.strMeal : res.strIngredient}</h3>
+                                                <p>{isChosen === 'meals' ? res.strCategory : ''}</p>
+                                            </div>
+                                        </Link>
                                     </div>
                                 </div>
                             ))
@@ -54,11 +56,13 @@ const arrayList = useMemo(() => {
                             latestMeals?.map((meal, idx) => (
                                 <div key={idx} className={'col-4'}>
                                     <div className="box">
-                                        <img src={isChosen === 'meals' ? meal.strMealThumb : `https://themealdb.com/images/ingredients/${meal.strIngredient}.png`} alt="2"/>
-                                        <div className="home-description">
-                                            <h3>{isChosen === 'meals' ? meal.strMeal : meal.strIngredient}</h3>
-                                            <p>{isChosen === 'meals' ? meal.strCategory : ''}</p>
-                                        </div>
+                                        <Link to={`/meals/${meal.idMeal}`}>
+                                            <img src={isChosen === 'meals' ? meal.strMealThumb : `https://themealdb.com/images/ingredients/${meal.strIngredient}.png`} alt="2"/>
+                                            <div className="home-description">
+                                                <h3>{isChosen === 'meals' ? meal.strMeal : meal.strIngredient}</h3>
+                                                <p>{isChosen === 'meals' ? meal.strCategory : ''}</p>
+                                            </div>
+                                        </Link>
                                     </div>
                                 </div>
                             ))
