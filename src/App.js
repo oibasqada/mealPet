@@ -9,6 +9,7 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import Header from "./components/Header/Header";
 import SearchByFirstLetter from "./pages/SearchPage/SearchByFirstLetter";
 import IngredientPage from "./pages/IngredientPage/IngredientPage";
+import {getIngredients, getLatestMeals, getMeals} from "./redux/action/mealAction";
 
 function App() {
 
@@ -16,6 +17,8 @@ function App() {
 
     useEffect(() => {
         dispatch(getMeals())
+        dispatch(getIngredients())
+        dispatch(getLatestMeals())
     }, [])
 
 
