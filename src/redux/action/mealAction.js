@@ -23,6 +23,15 @@ export const getIngredients = () => {
     }
 }
 
+export const getLatestMeals = () => {
+    return (dispatch) => {
+        axios('https://themealdb.com/api/json/v2/1/latest.php')
+            .then(({data}) => {
+                dispatch({type: 'GET_LATEST_MEALS', payload: data.meals})
+            })
+    }
+}
+
 export const chooseIngredients = () => {
     return {type: 'INGREDIENT'}
 }

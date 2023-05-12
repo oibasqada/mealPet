@@ -30,7 +30,10 @@ const Header = () => {
 
                     </div>
                     <div className="links">
-                        <button onClick={handleClick}>
+                        <button
+                            className={'btn'}
+                            onClick={handleClick}
+                        >
                             {isChosen === 'meals' ? 'Ingredients' : 'Meals'}
                         </button>
                         <Link className={'nav-link'} to={``}>Categories</Link>

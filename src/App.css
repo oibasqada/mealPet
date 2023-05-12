@@ -7,7 +7,7 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1024px;
   width: 100%;
   margin: 0 auto;
 }
@@ -47,6 +47,28 @@
 .col-12 {width: 100%;}
 
 /*row 'n' cols*/
+
+.spacing {
+  margin: 50px 0;
+}
+
+.swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.section-name {
+  padding: 15px 0;
+  font-size: 36px;
+  color: #1c1c1c;
+}
+
+.content-wrapper {
+  max-width: 660px;
+  width: 100%;
+  margin: 0 0 15px;
+}
 
 .box {
   position: relative;

@@ -3,7 +3,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {useEffect} from "react";
-import {getIngredients, getMeals, getSwiperMeals} from "./redux/action/mealAction";
+import {getIngredients, getLatestMeals, getMeals} from "./redux/action/mealAction";
 import Header from "./components/Header/Header";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
     useEffect(() => {
         dispatch(getMeals())
         dispatch(getIngredients())
+        dispatch(getLatestMeals())
     }, [])
 
 
@@ -22,6 +23,8 @@ function App() {
          <Header/>
          <Routes>
              <Route path={'/'} element={<HomePage/>}/>
+             <Route path="/meal/:name" element={<MealPage/>}/>
+             <Route path="/meal/:name/ingredient/:name" element={<IngredientsPage/>}/>
          </Routes>
      </BrowserRouter>
     </div>
