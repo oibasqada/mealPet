@@ -24,7 +24,7 @@ const SearchByFirstLetter = () => {
                 <div className={'container'}>
                     <div className={'row'}>
                         {
-                            letter.map(el =>
+                            letter?.map(el =>
                                 <div key={el.id} className={'col-3'}>
                                     <div className="box">
                                         <Link to={`/meals/${el.idMeal}`}>
