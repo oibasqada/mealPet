@@ -14,7 +14,7 @@ const IngredientPage = () => {
         axios.get(`https://themealdb.com/api/json/v1/1/filter.php?i=chicken_breast`)
             .then(({data}) => {
                 setMeal(data.meals)
-                console.log(data.meals, 'indge')
+                console.log(data, 'indge')
             })
             .finally(() => {
                 setLoading(false)
@@ -39,7 +39,7 @@ const IngredientPage = () => {
                             <div className="row">
                                 {
                                     loading ? <h2>loading...</h2>:
-                                        meal.map((meal, idx) =>
+                                        meal?.map((meal, idx) =>
                                             <div key={idx} className={'col-3'}>
                                                 <div className={'box meal-ingredient'}>
                                                     <img src={`${meal.strMealThumb}`} alt=""/>

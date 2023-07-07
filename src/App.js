@@ -16,6 +16,7 @@ function App() {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        console.log('123')
         dispatch(getMeals())
         dispatch(getIngredients())
         dispatch(getLatestMeals())

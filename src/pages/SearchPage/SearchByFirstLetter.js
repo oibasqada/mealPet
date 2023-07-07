@@ -11,7 +11,7 @@ const SearchByFirstLetter = () => {
         axios(`https://themealdb.com/api/json/v1/1/search.php?f=${params}`)
             .then(({data}) => {
                 setLetter(data.meals)
-                console.log(data.meals, 'letter')
+                // console.log(data.meals, 'letter')
             })
             .finally(() => {
                 setLoading(false)

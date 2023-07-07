@@ -17,7 +17,7 @@ const arrayList = useMemo(() => {
         return ingredients
     }
 }, [isChosen, meals, ingredients, latestMeals])
-    console.log(latestMeals)
+    // console.log(latestMeals)
 
     return (
         <div className={"container"}>

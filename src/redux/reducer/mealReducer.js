@@ -8,7 +8,7 @@ const initialState = {
 export default function MealsReducer( state = initialState, action ) {
     switch (action.type) {
         case 'GET_MEALS':
-            return {...state, meals: action.payload.slice(0,6)}
+            return {...state, meals: action.payload.slice(0,9)}
         case 'GET_INGREDIENTS':
             return {...state, ingredients: action.payload}
         case 'GET_LATEST_MEALS':
